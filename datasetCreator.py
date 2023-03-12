@@ -103,8 +103,7 @@ def main():
                                                   results.multi_handedness):
                 if cap_flag:
                     imgNum += 1
-                    debug_image.save(f"/Users/hassan/Desktop/HandGestureRecognition/hassan's_dataset/datasetPics/A/img_{imgNum}.jpeg")
-                
+                    cv.imwrite(f"/Users/hassan/Desktop/HandGestureRecognition/hassan's_dataset/datasetPics/A/img_{imgNum}.jpeg", debug_image)
                 # Bounding box calculation
                 brect = calc_bounding_rect(debug_image, hand_landmarks)
 
@@ -119,6 +118,7 @@ def main():
                     debug_image,
                     brect,
                     handedness,
+                    'A'
                 )
 
         # Screen reflection #############################################################
