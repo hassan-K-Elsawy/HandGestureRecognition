@@ -71,6 +71,7 @@ def main():
     mode = 0
     cap_flag = False
     imgNum = 0
+    currentChar = 'NoChar'
 
     while True:
         fps = cvFpsCalc.get()
@@ -103,7 +104,7 @@ def main():
                                                   results.multi_handedness):
                 if cap_flag:
                     imgNum += 1
-                    cv.imwrite(f"/Users/hassan/Desktop/HandGestureRecognition/hassan's_dataset/datasetPics/A/img_{imgNum}.jpeg", debug_image)
+                    cv.imwrite(f"{currentChar}img_{imgNum}.jpeg", debug_image)
                 # Bounding box calculation
                 brect = calc_bounding_rect(debug_image, hand_landmarks)
 
@@ -118,7 +119,7 @@ def main():
                     debug_image,
                     brect,
                     handedness,
-                    'A'
+                    currentChar
                 )
 
         # Screen reflection #############################################################
